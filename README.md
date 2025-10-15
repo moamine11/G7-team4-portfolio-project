@@ -1,6 +1,6 @@
 # G7-team4-portfolio-project
 
-Team Members:                        Git-Hub usernames:
+Team Members:                        
  - Chaouchi Mohamed Amine (Leader)     @moamine11
  - Boucenna Rabah                      @Rabah-boucenna
  - Bensaddek kaouther                  @kaoutherbensaddek
