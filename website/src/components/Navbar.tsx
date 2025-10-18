@@ -65,16 +65,10 @@ const Navbar = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex items-center space-x-2 px-5 py-2.5 rounded-full overflow-hidden"
+              className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 hover:border-primary/50 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors" />
-              <div className="absolute inset-0 border border-primary/30 rounded-full group-hover:border-primary/60 transition-colors" />
-              <motion.div
-                className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"
-              />
-              <Github className="w-4 h-4 text-primary relative z-10 group-hover:animate-bounce-slow" />
-              <span className="text-primary relative z-10 font-medium">GitHub</span>
+              <Github className="w-4 h-4 text-primary" />
+              <span className="text-primary font-medium">GitHub</span>
             </motion.a>
           </div>
 

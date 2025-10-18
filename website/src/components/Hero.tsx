@@ -8,7 +8,7 @@ const Hero = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
       {/* Animated gradient mesh background */}
       <motion.div 
         className="absolute inset-0 gradient-mesh"
@@ -33,14 +33,13 @@ const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, delay: 1 }}
       />
       
-      {/* 3D AI Brain Animation */}
+      {/* 3D AI Brain Animation - Repositioned higher and bigger */}
       <motion.div
-        className="absolute right-[4%] top-1/2 -translate-y-1/2 hidden lg:block"
+        className="absolute right-[0%] top-[22%] -translate-y-1/2 hidden lg:block"
         initial={{ opacity: 0, scale: 0.9, rotateY: -8 }}
         animate={{ 
           opacity: 1, 
-          scale: 1, 
-          // subtle sway and slight vertical drift only
+          scale: 1,
           rotateY: [-6, 0, 6, 0],
           y: [0, -8, 0],
         }}
@@ -53,6 +52,7 @@ const Hero = () => {
         style={{
           transformStyle: "preserve-3d",
           perspective: "1000px",
+          opacity: opacity,
         }}
       >
         <div
@@ -64,7 +64,7 @@ const Hero = () => {
           <img 
             src={brainImage} 
             alt="AI Neural Network" 
-            className="w-[520px] h-[520px] xl:w-[620px] xl:h-[620px] object-contain drop-shadow-[0_0_60px_rgba(34,211,238,0.6)]"
+            className="w-[680px] h-[680px] xl:w-[800px] xl:h-[800px] object-contain drop-shadow-[0_0_60px_rgba(34,211,238,0.6)]"
           />
           
           {/* Additional glow effect */}
@@ -90,13 +90,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center lg:text-left max-w-5xl mx-auto lg:mx-0 lg:pr-[28rem] space-y-8"
+          className="text-center lg:text-left max-w-6xl mx-auto lg:mx-0 lg:max-w-[55%] space-y-8"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full glass border-2 border-primary/30 text-primary"
+            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full glass border-2 border-primary/30 text-primary mx-auto lg:mx-0"
           >
             <Sparkles className="w-5 h-5 animate-glow-pulse" />
             <span className="text-sm font-semibold tracking-wide">NeuralForge - Building the Future with AI</span>
@@ -106,19 +106,30 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.2] tracking-tight"
+            style={{ fontFamily: "'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif" }}
           >
             <motion.span
-              className="block mb-2"
+              className="block mb-3 text-foreground"
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               Meet the
             </motion.span>
             <motion.span 
-              className="block text-gradient-primary animate-gradient-shift bg-[length:200%_auto]"
+              className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 pb-4"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear"
+              }}
               style={{
-                backgroundImage: "linear-gradient(90deg, hsl(230 60% 20%), hsl(188 95% 50%), hsl(280 85% 65%), hsl(188 95% 50%), hsl(230 60% 20%))",
+                backgroundSize: "200% auto",
+                backgroundImage: "linear-gradient(90deg, #3b82f6, #06b6d4, #a855f7, #06b6d4, #3b82f6)",
+                lineHeight: "1.3",
               }}
             >
               AI Engineers
@@ -129,23 +140,23 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl lg:text-3xl text-foreground/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed font-medium"
           >
             A team of talented AI Engineering students collaborating to create{" "}
-            <span className="text-primary font-semibold">intelligent solutions</span>
+            <span className="text-primary font-bold">intelligent solutions</span>
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-8"
           >
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="#team"
-              className="group relative px-10 py-4 rounded-xl overflow-hidden"
+              className="group relative px-10 py-4 rounded-xl overflow-hidden shadow-2xl"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-100" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
@@ -161,7 +172,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="pt-12"
+            className="pt-16 hidden lg:block"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}

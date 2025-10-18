@@ -6,6 +6,135 @@ import Footer from "@/components/Footer";
 import SkillBadge from "@/components/SkillBadge";
 import { teamMembers } from "@/components/TeamGrid";
 
+
+const memberData = {
+  "chaouchi-mohamed-amine": {
+    skills: [
+      "Python", "TensorFlow", "PyTorch", "Machine Learning",
+      "Deep Learning", "Neural Networks", "Team Leadership",
+      "MLOps", "Model Deployment", "FastAPI", "Docker",
+      "CI/CD", "Project Management", "Agile"
+    ],
+    projects: [
+      {
+        title: "AI Model Deployment Pipeline",
+        description: "Designed and implemented an end-to-end MLOps pipeline for deploying machine learning models to production with automated testing, monitoring, and scaling capabilities.",
+        tech: ["Python", "Docker", "Kubernetes", "MLflow", "FastAPI"]
+      },
+      {
+        title: "Neural Architecture Search Framework",
+        description: "Developed an automated framework for discovering optimal neural network architectures using reinforcement learning and evolutionary algorithms.",
+        tech: ["PyTorch", "Python", "AutoML", "Reinforcement Learning"]
+      },
+      {
+        title: "Team Collaboration AI Platform",
+        description: "Built a collaborative platform for AI researchers to share models, datasets, and experiments with version control and reproducibility features.",
+        tech: ["Python", "PostgreSQL", "Redis", "React", "Git"]
+      }
+    ]
+  },
+  "boucenna-rabah": {
+    skills: [
+      "Python", "PyTorch", "TensorFlow", "Deep Learning",
+      "Neural Networks", "NLP", "Transformers", "BERT",
+      "Computer Vision", "CNNs", "OpenCV", "YOLO",
+      "Keras", "Pandas", "NumPy"
+    ],
+    projects: [
+      {
+        title: "Advanced NLP Chatbot",
+        description: "Created an intelligent conversational AI using transformer models and fine-tuned BERT for context-aware responses in multiple domains.",
+        tech: ["PyTorch", "Transformers", "BERT", "NLP", "Python"]
+      },
+      {
+        title: "Real-Time Object Detection System",
+        description: "Implemented a real-time object detection and tracking system using YOLO architecture optimized for edge devices and low-latency applications.",
+        tech: ["Python", "YOLO", "OpenCV", "Computer Vision", "TensorFlow"]
+      },
+      {
+        title: "Multi-Modal Emotion Recognition",
+        description: "Developed a system that combines facial expression analysis and text sentiment to detect emotional states with high accuracy.",
+        tech: ["PyTorch", "CNNs", "NLP", "OpenCV", "Deep Learning"]
+      }
+    ]
+  },
+  "bensaddek-kaouther": {
+    skills: [
+      "Python", "Natural Language Processing", "spaCy", "NLTK",
+      "Computer Vision", "TensorFlow", "Keras", "OpenCV",
+      "Image Processing", "Text Analytics", "Deep Learning",
+      "Scikit-learn", "Pandas", "Data Visualization"
+    ],
+    projects: [
+      {
+        title: "Medical Image Analysis Tool",
+        description: "Built a computer vision system for analyzing medical imaging data to assist in early disease detection using convolutional neural networks.",
+        tech: ["TensorFlow", "Keras", "Computer Vision", "Python", "OpenCV"]
+      },
+      {
+        title: "Multilingual Text Summarization",
+        description: "Developed an NLP system capable of extracting and summarizing key information from documents in multiple languages using transformer models.",
+        tech: ["Python", "NLP", "Transformers", "spaCy", "NLTK"]
+      },
+      {
+        title: "Visual Question Answering System",
+        description: "Created a multi-modal AI system that combines computer vision and NLP to answer questions about image content.",
+        tech: ["PyTorch", "Computer Vision", "NLP", "Deep Learning"]
+      }
+    ]
+  },
+  "cherbal-sonia": {
+    skills: [
+      "Python", "Machine Learning", "Data Science", "Scikit-learn",
+      "Pandas", "NumPy", "Data Analysis", "Feature Engineering",
+      "Statistical Modeling", "Matplotlib", "Seaborn",
+      "Time Series Analysis", "Random Forest", "XGBoost"
+    ],
+    projects: [
+      {
+        title: "Predictive Maintenance System",
+        description: "Developed a machine learning system to predict equipment failures in industrial settings, reducing downtime and maintenance costs.",
+        tech: ["Python", "Scikit-learn", "XGBoost", "Time Series", "Pandas"]
+      },
+      {
+        title: "Customer Behavior Analytics",
+        description: "Built a comprehensive data science pipeline to analyze customer behavior patterns and predict churn with actionable insights.",
+        tech: ["Python", "Machine Learning", "Data Analysis", "Visualization"]
+      },
+      {
+        title: "Anomaly Detection Framework",
+        description: "Created an intelligent system for detecting anomalies in large-scale datasets using ensemble methods and statistical techniques.",
+        tech: ["Python", "Scikit-learn", "Statistical Modeling", "NumPy"]
+      }
+    ]
+  },
+  "chergui-mohamed-bahae-eddine": {
+    skills: [
+      "Python", "Deep Learning", "PyTorch", "Neural Networks",
+      "Reinforcement Learning", "AI Research", "GANs",
+      "Optimization Algorithms", "Automation", "ROS",
+      "Robotics", "Computer Vision", "TensorFlow"
+    ],
+    projects: [
+      {
+        title: "Autonomous Navigation System",
+        description: "Designed an AI-powered navigation system for autonomous robots using deep reinforcement learning and computer vision for obstacle avoidance.",
+        tech: ["PyTorch", "Reinforcement Learning", "ROS", "Computer Vision"]
+      },
+      {
+        title: "Generative Art AI",
+        description: "Developed a GAN-based system for creating unique artistic images and exploring the creative potential of artificial intelligence.",
+        tech: ["PyTorch", "GANs", "Deep Learning", "Neural Networks"]
+      },
+      {
+        title: "Intelligent Process Automation",
+        description: "Built an AI system that automates complex business processes by learning from user behavior and optimizing workflows.",
+        tech: ["Python", "Deep Learning", "Automation", "Optimization"]
+      }
+    ]
+  }
+};
+
 const Profile = () => {
   const { slug } = useParams();
   const member = teamMembers.find((m) => m.slug === slug);
@@ -23,34 +152,13 @@ const Profile = () => {
     );
   }
 
-  // Template skills for AI Engineering students
-  const templateSkills = [
-    "Python", "TensorFlow", "PyTorch", "Machine Learning",
-    "Deep Learning", "Neural Networks", "Computer Vision",
-    "Natural Language Processing", "Data Science", "Scikit-learn",
-    "Keras", "OpenCV", "Pandas", "NumPy"
-  ];
+  
+  const customData = memberData[slug] || {
+    skills: ["Python", "Machine Learning", "AI Engineering"],
+    projects: []
+  };
 
-  // Template projects for AI Engineering students
-  const templateProjects = [
-    {
-      title: "Image Classification Model",
-      description: "Developed a convolutional neural network for multi-class image classification using TensorFlow and Keras.",
-      tech: ["Python", "TensorFlow", "CNN", "Computer Vision"]
-    },
-    {
-      title: "NLP Sentiment Analysis",
-      description: "Built a natural language processing model to analyze sentiment in social media posts and reviews.",
-      tech: ["Python", "PyTorch", "BERT", "NLP"]
-    },
-    {
-      title: "Predictive Analytics System",
-      description: "Created a machine learning pipeline for predictive analytics on large-scale datasets.",
-      tech: ["Python", "Scikit-learn", "Pandas", "Data Analysis"]
-    }
-  ];
-
-  // Extended profile data
+  
   const profileData = {
     ...member,
     email: `${member.slug.replace(/-/g, ".")}@neuralforge.ai`,
@@ -186,7 +294,7 @@ const Profile = () => {
             >
               <h2 className="text-2xl font-bold mb-6">Technical Skills</h2>
               <div className="flex flex-wrap gap-3">
-                {templateSkills.map((skill, index) => (
+                {customData.skills.map((skill, index) => (
                   <SkillBadge key={skill} skill={skill} index={index} />
                 ))}
               </div>
@@ -206,7 +314,7 @@ const Profile = () => {
             >
               <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
               <div className="space-y-6">
-                {templateProjects.map((project, index) => (
+                {customData.projects.map((project, index) => (
                   <motion.div
                     key={project.title}
                     initial={{ opacity: 0, x: -20 }}
