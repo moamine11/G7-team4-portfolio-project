@@ -22,10 +22,10 @@ const teamMembers = [
   },
   {
     name: "Bensaddek Kaouther",
-    role: "AI Engineering Student",
-    bio: "Specializing in natural language processing and computer vision applications.",
+    role: "AI Engineering Student • Designer • ETC planning manager",
+    bio: "AI student at ENSIA and passionate Full-Stack Developer & Designer, blending technical expertise with creative vision to build smart, user-focused digital experiences. Driven by innovation, teamwork, and hands-on learning.",
     image: "/images/bensaddek.jpg",
-    github: "https://github.com/bensaddek-kaouther",
+    github: "https://github.com/kaoutherbensaddek",
     slug: "bensaddek-kaouther",
   },
   {

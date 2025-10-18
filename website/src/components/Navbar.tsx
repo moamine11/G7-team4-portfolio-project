@@ -62,7 +62,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com"
+              href="https://github.com/moamine11/G7-team4-portfolio-project/tree/main"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group flex items-center space-x-2 px-5 py-2.5 rounded-full overflow-hidden"
@@ -108,7 +108,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://github.com"
+              href="https://github.com/moamine11/G7-team4-portfolio-project/tree/main"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 py-2 text-primary"

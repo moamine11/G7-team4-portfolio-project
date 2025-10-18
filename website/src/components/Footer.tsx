@@ -33,7 +33,7 @@ const Footer = () => {
             className="flex items-center space-x-6"
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/moamine11/G7-team4-portfolio-project/tree/main"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 360 }}
