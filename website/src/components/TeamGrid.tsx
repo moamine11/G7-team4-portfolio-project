@@ -49,35 +49,30 @@ const teamMembers = [
   {
     name: "Boucenna Rabah",
     role: "AI Engineering Student",
-    bio: "Passionate about neural networks, deep learning architectures, and AI model optimization.",
-    image: "/images/boucenna.jpg",
-    github: "https://github.com/boucenna-rabah",
-    email: "boucenna.rabah@neuralforge.ai",
-    linkedin: "https://linkedin.com/in/boucenna-rabah",
+    bio: "Building innovative software solutions through powerful websites and seamless applications",
+    image: "/images/boucenna.png",
+    github: "https://github.com/Rabah-boucenna",
+    email: "rabah.boucenna@ensia.edu.dz",
+    linkedin: "https://linkedin.com/in/rabah-boucenna-149394374",
     slug: "boucenna-rabah",
-    aboutMe: "As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial intelligence and machine learning. I focus on developing innovative solutions that leverage the power of neural networks, deep learning, and data science to solve real-world problems. I believe in continuous learning and staying at the forefront of AI research and development.",
+    aboutMe: "As an AI Engineering student, I am passionate about exploring the frontiers of artificial intelligence and developing innovative solutions that leverage data mining, software engineering, and data science to solve real-world problems.",
     skills: [
-      "Python", "PyTorch", "TensorFlow", "Deep Learning",
-      "Neural Networks", "NLP", "Transformers", "BERT",
-      "Computer Vision", "CNNs", "OpenCV", "YOLO",
-      "Keras", "Pandas", "NumPy"
+      "Python", "javascript", "php",
+      "Html", "CSS", "Java", "C/C++",
+      "React.js", "DJANGO", "SQL", "Linux","OOP","FLUTTER","Dart"
+      , "Pandas", "NumPy"
     ],
     projects: [
       {
-        title: "Advanced NLP Chatbot",
-        description: "Created an intelligent conversational AI using transformer models and fine-tuned BERT for context-aware responses in multiple domains.",
-        tech: ["PyTorch", "Transformers", "BERT", "NLP", "Python"]
-      },
-      {
-        title: "Real-Time Object Detection System",
-        description: "Implemented a real-time object detection and tracking system using YOLO architecture optimized for edge devices and low-latency applications.",
-        tech: ["Python", "YOLO", "OpenCV", "Computer Vision", "TensorFlow"]
-      },
-      {
-        title: "Multi-Modal Emotion Recognition",
-        description: "Developed a system that combines facial expression analysis and text sentiment to detect emotional states with high accuracy.",
-        tech: ["PyTorch", "CNNs", "NLP", "OpenCV", "Deep Learning"]
-      }
+  title: "Gym Management System",
+  description: "Developed a complete web-based gym management system using HTML, CSS, JavaScript, and PHP, with a MySQL database managed via phpMyAdmin. The system handles member registration, subscriptions, and attendance tracking through a clean and user-friendly interface.",
+  tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "phpMyAdmin"]
+},
+{
+  title: "Discover Algeria in 7 Days",
+  description: "Built an interactive tourism web application that recommends personalized travel routes across Algeria using search algorithms. The project was developed with FastAPI as the backend and deployed as a fully functional website to help users plan their 7-day discovery journey.",
+  tech: ["FastAPI", "Python", "Search Algorithms", "React.js", "JavaScript", "Web Deployment"]
+}
     ]
   },
   {
