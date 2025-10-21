@@ -82,8 +82,8 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      <motion.div 
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      <motion.div
+        className="container mx-auto pl-10 pr-6 sm:pl-12 sm:pr-8 md:pl-16 md:pr-10 lg:pl-20 lg:pr-12 xl:pl-24 xl:pr-12 relative z-10"
         style={{ opacity }}
       >
         <motion.div
