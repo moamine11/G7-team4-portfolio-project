@@ -97,13 +97,26 @@ const TeamMember = ({ name, role, bio, image, github, slug, index }: TeamMemberP
               style={{ transform: "translateZ(20px)" }}
             >
               <div className="relative">
-                {/* Circular image placeholder - larger size */}
+                {/* Display actual image or placeholder */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
-                  className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/30 flex items-center justify-center"
+                  className="w-32 h-32 rounded-full overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"
                 >
-                  <User className="w-16 h-16 text-primary/60" />
+                  <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Hide image and show placeholder if it fails to load
+                      e.currentTarget.style.display = 'none';
+                      const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (placeholder) placeholder.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full flex items-center justify-center" style={{ display: 'none' }}>
+                    <User className="w-16 h-16 text-primary/60" />
+                  </div>
                 </motion.div>
                 <motion.div
                   className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl"
