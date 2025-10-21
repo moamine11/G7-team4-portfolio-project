@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, ArrowLeft, Mail, Linkedin } from "lucide-react";
+import { Github, ArrowLeft, Mail, Linkedin, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -152,13 +152,13 @@ const Profile = () => {
     );
   }
 
-  
+
   const customData = memberData[slug] || {
     skills: ["Python", "Machine Learning", "AI Engineering"],
     projects: []
   };
 
-  
+
   const profileData = {
     ...member,
     email: `${member.slug.replace(/-/g, ".")}@neuralforge.ai`,
@@ -168,12 +168,12 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="absolute inset-0 gradient-mesh opacity-30" />
-          
+
           <div className="relative container mx-auto max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,8 +196,13 @@ const Profile = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="relative"
                 >
-                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 flex items-center justify-center text-6xl font-bold text-gradient glow">
-                    {member.name.split(' ').map(n => n[0]).join('')}
+                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 flex items-center justify-center relative overflow-hidden">
+                    <User className="w-20 h-20 text-primary/60" />
+                    <motion.div
+                      className="absolute inset-0 bg-primary/10"
+                      animate={{ opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
                   </div>
                 </motion.div>
 
@@ -219,7 +224,7 @@ const Profile = () => {
                   >
                     {member.role}
                   </motion.p>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -273,9 +278,9 @@ const Profile = () => {
                 {member.bio}
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial 
-                intelligence and machine learning. I focus on developing innovative solutions that leverage 
-                the power of neural networks, deep learning, and data science to solve real-world problems. 
+                As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial
+                intelligence and machine learning. I focus on developing innovative solutions that leverage
+                the power of neural networks, deep learning, and data science to solve real-world problems.
                 I believe in continuous learning and staying at the forefront of AI research and development.
               </p>
             </motion.div>
