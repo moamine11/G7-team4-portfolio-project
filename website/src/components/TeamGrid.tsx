@@ -148,41 +148,48 @@ const teamMembers = [
       }
     ]
   },
-  {
-    name: "Chergui Mohamed Bahae Eddine",
-    role: "AI Engineering Student",
-    bio: "Focused on AI research, neural network architectures, and intelligent automation.",
-    image: "/images/chergui.jpg",
-    github: "https://github.com/chergui-bahae",
-    email: "chergui.mohamed.bahae.eddine@neuralforge.ai",
-    linkedin: "https://linkedin.com/in/chergui-mohamed-bahae-eddine",
-    slug: "chergui-mohamed-bahae-eddine",
-    aboutMe: "As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial intelligence and machine learning. I focus on developing innovative solutions that leverage the power of neural networks, deep learning, and data science to solve real-world problems. I believe in continuous learning and staying at the forefront of AI research and development.",
-    skills: [
-      "Python", "Deep Learning", "PyTorch", "Neural Networks",
-      "Reinforcement Learning", "AI Research", "GANs",
-      "Optimization Algorithms", "Automation", "ROS",
-      "Robotics", "Computer Vision", "TensorFlow"
-    ],
-    projects: [
-      {
-        title: "Autonomous Navigation System",
-        description: "Designed an AI-powered navigation system for autonomous robots using deep reinforcement learning and computer vision for obstacle avoidance.",
-        tech: ["PyTorch", "Reinforcement Learning", "ROS", "Computer Vision"]
-      },
-      {
-        title: "Generative Art AI",
-        description: "Developed a GAN-based system for creating unique artistic images and exploring the creative potential of artificial intelligence.",
-        tech: ["PyTorch", "GANs", "Deep Learning", "Neural Networks"]
-      },
-      {
-        title: "Intelligent Process Automation",
-        description: "Built an AI system that automates complex business processes by learning from user behavior and optimizing workflows.",
-        tech: ["Python", "Deep Learning", "Automation", "Optimization"]
-      }
-    ]
-  },
-];
+  
+    {
+      name: "Chergui Mohamed Bahae Eddine",
+      role: "3rd Year AI Engineering Student | Web & App Developer",
+      bio: "Passionate about building intelligent and user-focused web and mobile applications that integrate AI-driven features.",
+      image: "/images/bahae.png",
+      github: "https://github.com/Mohamed-chergui",
+      email: "chergui.mohamed.bahae.eddine@ensia.edu.dz",
+      linkedin: "https://linkedin.com/in/chergui-mohamed-bahae-eddine",
+      slug: "chergui-mohamed-bahae-eddine",
+      aboutMe:
+        "As a 3rd-year AI Engineering student, I specialize in developing full-stack web and mobile applications using Flutter and modern web technologies. My focus lies in creating scalable, efficient, and AI-assisted solutions that enhance user experience. I enjoy blending AI concepts with practical software development to deliver meaningful digital products.",
+    
+      skills: [
+        "Flutter", "Dart", "React", "JavaScript", "TypeScript", "Python",
+        "Python", "Machine Learning", "Data Science", "Scikit-learn",
+        "Node.js", "Express.js", "Firebase", "Supabase", "MongoDB", "HTML",
+        "CSS", "TailwindCSS", "Git", "UI/UX Design", "Figma"  , "Neural Networks"
+      ],
+    
+      projects: [
+        {
+          title: "Debate Connect",
+          description:
+            "A real-time debate and discussion app built with Flutter, allowing users to join or host live debates, vote, and comment using a clean and interactive UI.",
+          tech: ["Flutter", "Dart", "socket.io", "mongodb","node js "]
+        },
+        {
+          title: "affia",
+          description:
+            "A Flutter-based medical consultation app connecting patients with doctors through chat and video calls, featuring appointment scheduling and health tracking.",
+          tech: ["Flutter", "Dart", "django", "REST API"]
+        },
+        {
+          title: "AI Portfolio Builder",
+          description:
+            "A responsive web platform that helps users generate professional portfolios using AI suggestions for design, layout, and content optimization.",
+          tech: ["React", "Node.js", "TailwindCSS", "OpenAI API"]
+        }
+      ]
+    }
+  ]
 
 const TeamGrid = () => {
   return (
