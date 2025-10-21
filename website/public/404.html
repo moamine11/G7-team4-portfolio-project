@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <script>
-      sessionStorage.redirect = location.href;
+    <script type="text/javascript">
+      // Redirect to index.html with correct path
+      var pathSegmentsToKeep = 1; // Change to 0 if your repo is a user site (not a project site)
+      var l = window.location;
+      var newURL = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=' +
+        l.pathname.slice(1).replace(/\//g, '-') + (l.search ? '&' + l.search.slice(1) : '');
+      window.location.replace(newURL);
     </script>
-    <meta http-equiv="refresh" content="0;URL='/G7-team4-portfolio-project'">
   </head>
   <body>
     <p>Redirecting...</p>
