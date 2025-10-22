@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Force rebuild to clear cache
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
