@@ -1,14 +1,22 @@
 {
   "name": "vite_react_shadcn_ts",
+  "homepage": "https://moamine11.github.io/G7-team4-portfolio-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "npm run dev",
     "build": "vite build",
+    "build:preview": "vite build --base /",
     "build:dev": "vite build --mode development",
+    "build:ci": "vite build --mode production",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve:dist": "vite preview --port 8080",
+    "serve:dist:8081": "vite preview --port 8081 --strictPort",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -46,6 +54,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.24",
+    "gh-pages": "^6.3.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
