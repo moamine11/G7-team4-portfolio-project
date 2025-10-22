@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, ArrowLeft, Mail, Linkedin } from "lucide-react";
+import { useEffect } from "react";
+import { Github, ArrowLeft, Mail, Linkedin, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,144 +8,32 @@ import SkillBadge from "@/components/SkillBadge";
 import { teamMembers } from "@/components/TeamGrid";
 
 
-const memberData = {
-  "chaouchi-mohamed-amine": {
-    skills: [
-      "Python", "TensorFlow", "PyTorch", "Machine Learning",
-      "Deep Learning", "Neural Networks", "Team Leadership",
-      "MLOps", "Model Deployment", "FastAPI", "Docker",
-      "CI/CD", "Project Management", "Agile"
-    ],
-    projects: [
-      {
-        title: "AI Model Deployment Pipeline",
-        description: "Designed and implemented an end-to-end MLOps pipeline for deploying machine learning models to production with automated testing, monitoring, and scaling capabilities.",
-        tech: ["Python", "Docker", "Kubernetes", "MLflow", "FastAPI"]
-      },
-      {
-        title: "Neural Architecture Search Framework",
-        description: "Developed an automated framework for discovering optimal neural network architectures using reinforcement learning and evolutionary algorithms.",
-        tech: ["PyTorch", "Python", "AutoML", "Reinforcement Learning"]
-      },
-      {
-        title: "Team Collaboration AI Platform",
-        description: "Built a collaborative platform for AI researchers to share models, datasets, and experiments with version control and reproducibility features.",
-        tech: ["Python", "PostgreSQL", "Redis", "React", "Git"]
-      }
-    ]
-  },
-  "boucenna-rabah": {
-    skills: [
-      "Python", "PyTorch", "TensorFlow", "Deep Learning",
-      "Neural Networks", "NLP", "Transformers", "BERT",
-      "Computer Vision", "CNNs", "OpenCV", "YOLO",
-      "Keras", "Pandas", "NumPy"
-    ],
-    projects: [
-      {
-        title: "Advanced NLP Chatbot",
-        description: "Created an intelligent conversational AI using transformer models and fine-tuned BERT for context-aware responses in multiple domains.",
-        tech: ["PyTorch", "Transformers", "BERT", "NLP", "Python"]
-      },
-      {
-        title: "Real-Time Object Detection System",
-        description: "Implemented a real-time object detection and tracking system using YOLO architecture optimized for edge devices and low-latency applications.",
-        tech: ["Python", "YOLO", "OpenCV", "Computer Vision", "TensorFlow"]
-      },
-      {
-        title: "Multi-Modal Emotion Recognition",
-        description: "Developed a system that combines facial expression analysis and text sentiment to detect emotional states with high accuracy.",
-        tech: ["PyTorch", "CNNs", "NLP", "OpenCV", "Deep Learning"]
-      }
-    ]
-  },
-  "bensaddek-kaouther": {
-    skills: [
-      "Python", "Natural Language Processing", "spaCy", "NLTK",
-      "Computer Vision", "TensorFlow", "Keras", "OpenCV",
-      "Image Processing", "Text Analytics", "Deep Learning",
-      "Scikit-learn", "Pandas", "Data Visualization"
-    ],
-    projects: [
-      {
-        title: "Medical Image Analysis Tool",
-        description: "Built a computer vision system for analyzing medical imaging data to assist in early disease detection using convolutional neural networks.",
-        tech: ["TensorFlow", "Keras", "Computer Vision", "Python", "OpenCV"]
-      },
-      {
-        title: "Multilingual Text Summarization",
-        description: "Developed an NLP system capable of extracting and summarizing key information from documents in multiple languages using transformer models.",
-        tech: ["Python", "NLP", "Transformers", "spaCy", "NLTK"]
-      },
-      {
-        title: "Visual Question Answering System",
-        description: "Created a multi-modal AI system that combines computer vision and NLP to answer questions about image content.",
-        tech: ["PyTorch", "Computer Vision", "NLP", "Deep Learning"]
-      }
-    ]
-  },
-  "cherbal-sonia": {
-    skills: [
-      "Python", "Machine Learning", "Data Science", "Scikit-learn",
-      "Pandas", "NumPy", "Data Analysis", "Feature Engineering",
-      "Statistical Modeling", "Matplotlib", "Seaborn",
-      "Time Series Analysis", "Random Forest", "XGBoost"
-    ],
-    projects: [
-      {
-        title: "Predictive Maintenance System",
-        description: "Developed a machine learning system to predict equipment failures in industrial settings, reducing downtime and maintenance costs.",
-        tech: ["Python", "Scikit-learn", "XGBoost", "Time Series", "Pandas"]
-      },
-      {
-        title: "Customer Behavior Analytics",
-        description: "Built a comprehensive data science pipeline to analyze customer behavior patterns and predict churn with actionable insights.",
-        tech: ["Python", "Machine Learning", "Data Analysis", "Visualization"]
-      },
-      {
-        title: "Anomaly Detection Framework",
-        description: "Created an intelligent system for detecting anomalies in large-scale datasets using ensemble methods and statistical techniques.",
-        tech: ["Python", "Scikit-learn", "Statistical Modeling", "NumPy"]
-      }
-    ]
-  },
-  "chergui-mohamed-bahae-eddine": {
-    skills: [
-      "Python", "Deep Learning", "PyTorch", "Neural Networks",
-      "Reinforcement Learning", "AI Research", "GANs",
-      "Optimization Algorithms", "Automation", "ROS",
-      "Robotics", "Computer Vision", "TensorFlow"
-    ],
-    projects: [
-      {
-        title: "Autonomous Navigation System",
-        description: "Designed an AI-powered navigation system for autonomous robots using deep reinforcement learning and computer vision for obstacle avoidance.",
-        tech: ["PyTorch", "Reinforcement Learning", "ROS", "Computer Vision"]
-      },
-      {
-        title: "Generative Art AI",
-        description: "Developed a GAN-based system for creating unique artistic images and exploring the creative potential of artificial intelligence.",
-        tech: ["PyTorch", "GANs", "Deep Learning", "Neural Networks"]
-      },
-      {
-        title: "Intelligent Process Automation",
-        description: "Built an AI system that automates complex business processes by learning from user behavior and optimizing workflows.",
-        tech: ["Python", "Deep Learning", "Automation", "Optimization"]
-      }
-    ]
-  }
-};
 
 const Profile = () => {
   const { slug } = useParams();
   const member = teamMembers.find((m) => m.slug === slug);
+
+  // Ensure the page is scrolled to the top when this component mounts or when the slug changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [slug]);
 
   if (!member) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Member Not Found</h1>
-          <Link to="/" className="text-primary hover:underline">
+          <Link
+            to="/"
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+              }
+            }}
+            className="text-primary hover:underline"
+          >
             Return to Home
           </Link>
         </div>
@@ -152,28 +41,18 @@ const Profile = () => {
     );
   }
 
-  
-  const customData = memberData[slug] || {
-    skills: ["Python", "Machine Learning", "AI Engineering"],
-    projects: []
-  };
-
-  
-  const profileData = {
-    ...member,
-    email: `${member.slug.replace(/-/g, ".")}@neuralforge.ai`,
-    linkedin: `https://linkedin.com/in/${member.slug}`,
-  };
+  // Use data directly from the member object
+  const profileData = member;
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="absolute inset-0 gradient-mesh opacity-30" />
-          
+
           <div className="relative container mx-auto max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -182,6 +61,11 @@ const Profile = () => {
             >
               <Link
                 to="/"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+                  }
+                }}
                 className="inline-flex items-center space-x-2 text-foreground/70 hover:text-primary transition-colors mb-8 group"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -196,8 +80,26 @@ const Profile = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="relative"
                 >
-                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 flex items-center justify-center text-6xl font-bold text-gradient glow">
-                    {member.name.split(' ').map(n => n[0]).join('')}
+                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/30 flex items-center justify-center relative overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Hide image and show placeholder if it fails to load
+                        e.currentTarget.style.display = 'none';
+                        const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (placeholder) placeholder.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full flex items-center justify-center" style={{ display: 'none' }}>
+                      <User className="w-20 h-20 text-primary/60" />
+                    </div>
+                    <motion.div
+                      className="absolute inset-0 bg-primary/10"
+                      animate={{ opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
                   </div>
                 </motion.div>
 
@@ -219,7 +121,7 @@ const Profile = () => {
                   >
                     {member.role}
                   </motion.p>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -236,14 +138,14 @@ const Profile = () => {
                       <span>GitHub</span>
                     </a>
                     <a
-                      href={`mailto:${profileData.email}`}
+                      href={`mailto:${member.email}`}
                       className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary/20 transition-all duration-300"
                     >
                       <Mail className="w-4 h-4" />
                       <span>Email</span>
                     </a>
                     <a
-                      href={profileData.linkedin}
+                      href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary/20 transition-all duration-300"
@@ -273,10 +175,7 @@ const Profile = () => {
                 {member.bio}
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial 
-                intelligence and machine learning. I focus on developing innovative solutions that leverage 
-                the power of neural networks, deep learning, and data science to solve real-world problems. 
-                I believe in continuous learning and staying at the forefront of AI research and development.
+                {member.aboutMe}
               </p>
             </motion.div>
           </div>
@@ -294,7 +193,7 @@ const Profile = () => {
             >
               <h2 className="text-2xl font-bold mb-6">Technical Skills</h2>
               <div className="flex flex-wrap gap-3">
-                {customData.skills.map((skill, index) => (
+                {member.skills.map((skill, index) => (
                   <SkillBadge key={skill} skill={skill} index={index} />
                 ))}
               </div>
@@ -314,7 +213,7 @@ const Profile = () => {
             >
               <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
               <div className="space-y-6">
-                {customData.projects.map((project, index) => (
+                {member.projects.map((project, index) => (
                   <motion.div
                     key={project.title}
                     initial={{ opacity: 0, x: -20 }}
