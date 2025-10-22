@@ -144,48 +144,35 @@ const teamMembers = [
 	{
 		name: "Cherbal Sonia",
 		role: "AI Engineering Student",
-		bio: "Exploring machine learning algorithms and data science for intelligent systems.",
+		bio: "Exploring cybersecurity and machine learning algorithms, learning how to merge them with Ai systems .",
 		image: "/images/cherbal.jpg",
-		github: "https://github.com/cherbal-sonia",
-		email: "cherbal.sonia@neuralforge.ai",
-		linkedin: "https://linkedin.com/in/cherbal-sonia",
+		github: "https://github.com/sonia417",
+		email: "sonia.cherbal@ensia.edu.dz",
+		linkedin: "https://www.linkedin.com/in/sonia-cherbal",
 		slug: "cherbal-sonia",
-		aboutMe: "As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial intelligence and machine learning. I focus on developing innovative solutions that leverage the power of neural networks, deep learning, and data science to solve real-world problems. I believe in continuous learning and staying at the forefront of AI research and development.",
+		aboutMe: "A third-year AI student, passionate about artificial intelligence, data science, and software development. I enjoy building intelligent systems that solve real-world problems and combining technical precision with creativity. My interests include applied machine learning, web technologies, and research in data-driven solutions.",
 		skills: [
-			"Python",
-			"Machine Learning",
-			"Data Science",
-			"Scikit-learn",
-			"Pandas",
-			"NumPy",
-			"Data Analysis",
-			"Feature Engineering",
-			"Statistical Modeling",
-			"Matplotlib",
-			"Seaborn",
-			"Time Series Analysis",
-			"Random Forest",
-			"XGBoost",
+			"Python", "Machine Learning",  "React", "TypeScript",
+     		"Pandas", "NumPy", "Data Analysis",
+    		"Feature Engineering", "Web Development", "FastAPI",
+    		"Data Visualization", "Model Evaluation"
 		],
 		projects: [
 			{
-				title: "Predictive Maintenance System",
-				description:
-					"Developed a machine learning system to predict equipment failures in industrial settings, reducing downtime and maintenance costs.",
-				tech: ["Python", "Scikit-learn", "XGBoost", "Time Series", "Pandas"],
+				title: "Jobjobni Website",
+				description: "Developed a web platform connecting university students with part-time jobs, volunteer opportunities, and internships, enabling businesses to post and manage offers easily.",
+				tech: ["React", "TypeScript", "CSS", "Node.js", "PHP", "Html"]
 			},
 			{
-				title: "Customer Behavior Analytics",
-				description:
-					"Built a comprehensive data science pipeline to analyze customer behavior patterns and predict churn with actionable insights.",
-				tech: ["Python", "Machine Learning", "Data Analysis", "Visualization"],
+				title: "Smart Workout Planner",
+			  	description: "Created an AI-powered workout planner using search algorithms to generate optimized exercise routines based on user preferences, fitness level, and available equipment.",
+			  	tech: ["Python", "A* Search", "Flask", "AI", "JSON"]
 			},
 			{
-				title: "Anomaly Detection Framework",
-				description:
-					"Created an intelligent system for detecting anomalies in large-scale datasets using ensemble methods and statistical techniques.",
-				tech: ["Python", "Scikit-learn", "Statistical Modeling", "NumPy"],
-			},
+				title: "AI Attendance Tracking System",
+				description: "Built an attendance management solution during an AI hackathon, integrating facial recognition and automation tools to streamline tracking and reporting.",
+				tech: ["Python", "OpenCV", "Machine Learning", "Flask", "AI"]
+			}
 		],
 	},
 	{
