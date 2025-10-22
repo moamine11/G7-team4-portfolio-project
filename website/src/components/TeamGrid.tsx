@@ -30,7 +30,6 @@ const teamMembers = [
       "Problem Solving",
       "DSA",
       "OOP"
-
     ],
     projects: [
       {
