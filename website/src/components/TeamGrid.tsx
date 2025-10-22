@@ -96,50 +96,31 @@ const teamMembers = [
 	},
 	{
 		name: "Bensaddek Kaouther",
-		role: "AI Engineering Student",
-		bio: "Specializing in natural language processing and computer vision applications.",
-		image: "/images/bensaddek.jpg",
-		github: "https://github.com/bensaddek-kaouther",
-		email: "bensaddek.kaouther@neuralforge.ai",
-		linkedin: "https://linkedin.com/in/bensaddek-kaouther",
+		role: "Product Owner ",
+		bio: "Kaouther Bensaddek is an AI Engineering student with a strong passion for developing intelligent systems that bridge the gap between research and real-world applications.",
+		image: "/images/kaouther.png",
+		github: "https://github.com/kaoutherbensaddek",
+		email: "kaouther.bensaddek@ensia.edu.dz",
+		linkedin: "https://www.linkedin.com/in/kaouther-bensaddek-7434162b8/",
 		slug: "bensaddek-kaouther",
-		aboutMe: "As an AI Engineering student at NeuralForge, I am passionate about exploring the frontiers of artificial intelligence and machine learning. I focus on developing innovative solutions that leverage the power of neural networks, deep learning, and data science to solve real-world problems. I believe in continuous learning and staying at the forefront of AI research and development.",
+		aboutMe: "I’m Kaouther Bensaddek, an AI Engineering student who loves building ideas that come to life through technology. I’m passionate about machine learning, optimization, and computer vision — anything that combines creativity with problem-solving. I’m part of several university tech clubs and currently serve as the Planning Manager at ETC, where I enjoy organizing events, working with great teams, and contributing to meaningful projects. I’m always eager to learn, share ideas, and grow in the world of AI and innovation.",
 		skills: [
-			"Python",
-			"Natural Language Processing",
-			"spaCy",
-			"NLTK",
-			"Computer Vision",
-			"TensorFlow",
-			"Keras",
-			"OpenCV",
-			"Image Processing",
-			"Text Analytics",
-			"Deep Learning",
-			"Scikit-learn",
-			"Pandas",
-			"Data Visualization",
-		],
-		projects: [
-			{
-				title: "Medical Image Analysis Tool",
-				description:
-					"Built a computer vision system for analyzing medical imaging data to assist in early disease detection using convolutional neural networks.",
-				tech: ["TensorFlow", "Keras", "Computer Vision", "Python", "OpenCV"],
-			},
-			{
-				title: "Multilingual Text Summarization",
-				description:
-					"Developed an NLP system capable of extracting and summarizing key information from documents in multiple languages using transformer models.",
-				tech: ["Python", "NLP", "Transformers", "spaCy", "NLTK"],
-			},
-			{
-				title: "Visual Question Answering System",
-				description:
-					"Created a multi-modal AI system that combines computer vision and NLP to answer questions about image content.",
-				tech: ["PyTorch", "Computer Vision", "NLP", "Deep Learning"],
-			},
-		],
+      "Python", "C++","JavaScript","PHP","HTML","CSS","MySQL","Oracle","React", "graphic design",
+      "Git","UI/UX Design","Figma","Adobe Illustrator","Machine Learning",
+      "Quantum Computing",
+  		],
+		 projects: [
+      {
+        title: "Eventy",
+        description: "A web app for event organization and management, connecting service providers and organizers.",
+       tech: ["HTML", "CSS", "JS", "PHP"]
+      },
+      {
+        title: "Warehouse Optimization",
+        description: "An AI-based project improving inventory layout efficiency using data analysis.",
+        tech: ["PYTHON"]
+      },
+    ]
 	},
 	{
 		name: "Cherbal Sonia",
