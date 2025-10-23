@@ -149,46 +149,47 @@ const teamMembers = [
     ]
   },
   
-    {
-      name: "Chergui Mohamed Bahae Eddine",
-      role: "3rd Year AI Engineering Student | Web & App Developer",
-      bio: "Passionate about building intelligent and user-focused web and mobile applications that integrate AI-driven features.",
-      image: "/images/bahae.png",
-      github: "https://github.com/Mohamed-chergui",
-      email: "chergui.mohamed.bahae.eddine@ensia.edu.dz",
-      linkedin: "https://linkedin.com/in/chergui-mohamed-bahae-eddine",
-      slug: "chergui-mohamed-bahae-eddine",
-      aboutMe:
-        "As a 3rd-year AI Engineering student, I specialize in developing full-stack web and mobile applications using Flutter and modern web technologies. My focus lies in creating scalable, efficient, and AI-assisted solutions that enhance user experience. I enjoy blending AI concepts with practical software development to deliver meaningful digital products.",
-    
-      skills: [
-        "Flutter", "Dart", "React", "JavaScript", "TypeScript", "Python",
-        "Python", "Machine Learning", "Data Science", "Scikit-learn",
-        "Node.js", "Express.js", "Firebase", "Supabase", "MongoDB", "HTML",
-        "CSS", "TailwindCSS", "Git", "UI/UX Design", "Figma"  , "Neural Networks"
-      ],
-    
-      projects: [
-        {
-          title: "Debate Connect",
-          description:
-            "A real-time debate and discussion app built with Flutter, allowing users to join or host live debates, vote, and comment using a clean and interactive UI.",
-          tech: ["Flutter", "Dart", "socket.io", "mongodb","node js "]
-        },
-        {
-          title: "affia",
-          description:
-            "A Flutter-based medical consultation app connecting patients with doctors through chat and video calls, featuring appointment scheduling and health tracking.",
-          tech: ["Flutter", "Dart", "django", "REST API"]
-        },
-        {
-          title: "AI Portfolio Builder",
-          description:
-            "A responsive web platform that helps users generate professional portfolios using AI suggestions for design, layout, and content optimization.",
-          tech: ["React", "Node.js", "TailwindCSS", "OpenAI API"]
-        }
-      ]
-    }
+  {
+    name: "Chergui Mohamed Bahae Eddine",
+    role: "3rd-Year AI Engineering Student | Web & Mobile Developer",
+    bio: "Enthusiastic about creating intelligent, user-friendly web and mobile applications powered by AI-driven technologies.",
+    image: "/images/bahae.png",
+    github: "https://github.com/Mohamed-chergui",
+    email: "chergui.mohamed.bahae.eddine@ensia.edu.dz",
+    linkedin: "https://linkedin.com/in/chergui-mohamed-bahae-eddine",
+    slug: "chergui-mohamed-bahae-eddine",
+  
+    aboutMe:
+      "I'm a 3rd-year AI Engineering student passionate about full-stack web and mobile development using Flutter and modern frameworks. I focus on building scalable, efficient, and AI-enhanced products that provide meaningful digital experiences.",
+  
+    skills: [
+      "Flutter", "Dart", "React", "JavaScript", "TypeScript", "Python",
+      "Machine Learning", "Data Science", "Scikit-learn", "Node.js",
+      "Express.js", "Firebase", "Supabase", "MongoDB", "HTML", "CSS",
+      "TailwindCSS", "Git", "UI/UX Design", "Figma", "Neural Networks"
+    ],
+  
+    projects: [
+      {
+        title: "AI Portfolio Builder",
+        description:
+          "A web platform that automatically generates professional portfolios with AI-based design and content recommendations.",
+        tech: ["React", "Node.js", "TailwindCSS", "OpenAI API"]
+      },
+      {
+        title: "Affia",
+        description:
+          "A healthcare consultation app built with Flutter that connects patients and doctors via chat and video calls, including appointment booking and health monitoring features.",
+        tech: ["Flutter", "Dart", "Django", "REST API"]
+      },
+      {
+        title: "Debate Connect",
+        description:
+          "A live debating app where users can host or join discussions, vote, and comment in real time through an interactive UI.",
+        tech: ["Flutter", "Dart", "Socket.io", "MongoDB", "Node.js"]
+      }
+    ]
+  }
   ]
 
 const TeamGrid = () => {
